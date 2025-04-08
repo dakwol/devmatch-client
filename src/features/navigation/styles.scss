@@ -1,0 +1,47 @@
+@use '../../styles/scss/' as *;
+.nav {
+  background-color: $bg-header;
+  box-shadow: 0 1px 4px rgba($bg-header, 0.05);
+  border-bottom: 1px dashed $border;
+  position: sticky;
+  backdrop-filter: blur(5px);
+  top: 0;
+  
+  .navContainer {
+    display: flex;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    border-right: 1px dashed $border;
+    border-left: 1px dashed $border;
+    padding: 12px;
+    gap: 24px;
+
+    .navLinksContainer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      .navLinks {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        @include fnt(12);
+      }
+    }
+  }
+
+  a {
+    color: $textLink;
+
+    &.logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $accent;
+    }
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}

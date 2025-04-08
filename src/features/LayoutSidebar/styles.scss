@@ -1,0 +1,21 @@
+@use '../../styles/scss/' as *;
+
+.layoutSidebarContainer {
+  display: flex;
+  height: 100%;
+  gap: 12px;
+  
+  .layoutSidebar {
+    width: 200px;
+    padding: 16px 12px 16px 0;
+    height: calc(100vh - 55px);
+    border-right: 1px dashed $border;
+
+    position: sticky;
+    top: 55px;
+  }
+
+  .layoutSidebarContent {
+    padding: 16px 0;
+  }
+}
