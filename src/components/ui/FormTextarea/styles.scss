@@ -1,0 +1,33 @@
+@use '../../../styles/scss/' as *;
+
+.formTextareaWrapper {
+  display: flex;
+  flex-direction: column; 
+  gap: 4px;
+}
+
+.formTextarea {
+  width: 100%;
+  height: 30px;
+  background-color: $primary;
+  outline: 1px dashed $border;
+  border: none;
+  border-radius: 8px;
+  transition: .2s ease-in-out;
+  padding: 0 12px;
+  max-width: 300px;
+  max-height: 300px;
+  text-wrap: wrap;
+  height: 150px;
+  @include scroll();
+
+  @include fnt(14, 16, $text, 400);
+
+  &:hover {
+    outline: 1px dashed $textLink;
+  }
+
+  &:focus {
+    outline: 1px dashed $accent;
+  }
+}

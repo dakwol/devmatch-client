@@ -6,6 +6,7 @@ import { profileSidebar } from '../../features/SidebarProjects/constants/profile
 import { projectsSidebar } from '../../features/SidebarProjects/constants/projectsSidebar';
 import Sidebar from '../../features/SidebarProjects/SidebarProjects';
 import { FC } from 'react';
+import { createProjectSidebar } from '../../features/SidebarProjects/constants/createProjectSidebar';
 
 const DynamicSidebar:FC = () => {
   const pathname = usePathname();
@@ -13,6 +14,7 @@ const DynamicSidebar:FC = () => {
   const getSidebarConfig = () => {
     if (pathname.startsWith('/dashboard')) return dashboardSidebar;
     if (pathname.startsWith('/profile')) return profileSidebar;
+    if (pathname.startsWith('/new-project')) return createProjectSidebar;
     return projectsSidebar; 
   };
 

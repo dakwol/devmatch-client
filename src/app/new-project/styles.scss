@@ -1,0 +1,20 @@
+@use '../../styles/scss/' as *;
+
+.newProjectContainer {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.createProject {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 400px;
+}
+
+.createProject__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
