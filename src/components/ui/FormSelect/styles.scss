@@ -1,0 +1,28 @@
+@use '../../../styles/scss/' as *;
+
+.formSelectWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.formSelect {
+  background-color: $primary;
+  border: none;
+  height: 30px;
+  width: 100%;
+  outline: 1px dashed $border;
+  border-radius: 8px;
+  padding: 0 12px;
+  cursor: pointer;
+
+  @include fnt(14, 16, $text, 400);
+  
+  &:hover {
+    outline: 1px dashed $textLink;
+  }
+
+  &:focus {
+    outline: 1px dashed $accent;
+  }
+}

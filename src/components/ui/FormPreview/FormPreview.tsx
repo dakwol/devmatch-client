@@ -2,6 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import './styles.scss';
 import { MarkdownPreview } from '../MarkdownPreview/MarkdownPreview';
+import { GitHubCard } from '../GithubCard/GithubCard';
 
 interface FormPreviewProps {
   title: string;
@@ -32,63 +33,57 @@ export const FormPreview: React.FC<FormPreviewProps> = ({
       <div className="formPreview__grid">
         {title && (
           <div className="formPreview__item">
-            <h3>Название проекта</h3>
             <p>{title}</p>
           </div>
         )}
 
         {description && (
           <div className="formPreview__item formPreview__item--fullwidth">
-            <h3>Описание проекта</h3>
-            <MarkdownPreview content={description}/>
+            <h3 className='formPreview__itemTitle'>Описание проекта</h3>
+            <MarkdownPreview content={description} />
           </div>
         )}
 
-        {techStack && (
-          <div className="formPreview__item">
-            <h3>Стек технологий</h3>
-            <p>{techStack}</p>
-          </div>
-        )}
-
-        {category && (
-          <div className="formPreview__item">
-            <h3>Категория</h3>
-            <p>{category}</p>
-          </div>
-        )}
-
-        {tags && (
-          <div className="formPreview__item">
-            <h3>Теги</h3>
-            <p>{tags}</p>
-          </div>
-        )}
-
+        {(category || techStack || tags) && <div className='fromPreviewThreeColumns'>
+          {category && (
+            <div className="formPreview__item">
+              <h3 className='formPreview__itemTitle'>Категория</h3>
+              <p>{category}</p>
+            </div>
+          )}
+          {techStack && (
+            <div className="formPreview__item">
+              <h3 className='formPreview__itemTitle'>Стек технологий</h3>
+              <p>{techStack}</p>
+            </div>
+          )}
+          {tags && (
+            <div className="formPreview__item">
+              <h3 className='formPreview__itemTitle'>Теги</h3>
+              <p>{tags}</p>
+            </div>
+          )}
+        </div>}
         {github && (
-          <div className="formPreview__item">
-            <h3>Ссылка на GitHub</h3>
-            <a href={github} target="_blank" rel="noopener noreferrer">{github}</a>
-          </div>
+          <GitHubCard url={github}/>
         )}
-
         {lookingFor && (
           <div className="formPreview__item">
-            <h3>Кого ищете в команду?</h3>
+            <h3 className='formPreview__itemTitle'>Кого ищете в команду?</h3>
             <p>{lookingFor}</p>
           </div>
         )}
 
         {experienceLevel && (
           <div className="formPreview__item">
-            <h3>Уровень опыта</h3>
+            <h3 className='formPreview__itemTitle'>Уровень опыта</h3>
             <p>{experienceLevel}</p>
           </div>
         )}
 
         {communication && (
           <div className="formPreview__item">
-            <h3>Способ связи</h3>
+            <h3 className='formPreview__itemTitle'>Способ связи</h3>
             <p>{communication}</p>
           </div>
         )}
